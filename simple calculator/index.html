@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+
+    <body style="background: #e29f04e9; margin-top: 10%; font-family: Arial, Helvetica, sans-serif;">
+        <center>
+         <h1>Simple Calculator</h1>
+    
+        <h4>Enter First Number:</h4>
+        <input type="number" id="num1" required style="height: 25px; width: 200px; background-color: rgb(167, 100, 18);">
+        <h4>Enter Second Number:</h4>
+        <input type="number" id="num2" required style="height: 25px; width: 200px; background-color: rgb(167, 100, 18);">
+        <br>
+
+        <h4>Operations:</h4>
+        <div class="buttons">
+            <button id="add" onclick="sum()" style="height: 50px; width: 50px; background: rgb(167, 100, 18);">+</button>
+            <button id="minus" onclick="diff()" style="height: 50px; width: 50px; background:rgb(167, 100, 18);">-</button>
+            <button id="multiply" onclick="product()" style="height: 50px; width: 50px; background: rgb(167, 100, 18);">*</button>
+            <button id="divide" onclick="quotient()" style="height: 50px; width: 50px; background: rgb(167, 100, 18);">/</button>
+            <button id="raise" onclick="power()" style="height: 50px; width: 50px; background:rgb(167, 100, 18);">**</button>
+            <button id="moduloo" onclick="modulo()" style="height: 50px; width: 50px; background: rgb(167, 100, 18);">%</button>
+        </div>
+
+        <h3>Output:</h3>
+        <input type="number" id="result" value="0" disabled style="height: 25px; width: 50px; background-color: rgb(214, 120, 26);">
+    </center>
+   
+
+    <script>
+        let a = 0;
+        let b = 0;
+
+        function sum() {
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            var sum = a + b;
+            document.getElementById("result").value = String(sum);
+        }
+
+        function diff() {
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            var diff = a - b;
+            document.getElementById("result").value = String(diff);
+        }
+
+        function product() {
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            var product = a * b;
+            document.getElementById("result").value = String(product);
+        }
+
+        function quotient() {
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            var qoutient = a / b;
+            document.getElementById("result").value = String(qoutient);
+        }
+
+        function power() {
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            var power = Math.pow(a,b);
+            document.getElementById("result").value = String(power);
+        }
+
+        function modulo() {
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            var modulo = a % b;
+            document.getElementById("result").value = String(modulo);
+        }
+    </script>
+</body>
+</html>
